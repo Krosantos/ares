@@ -6,6 +6,7 @@ body {
   background-color: #363630;
   font-family: "Geo", sans-serif;
   color: #f7f2b6;
+  text-shadow: 0.325rem 0.325rem #c28a35;
 }
 
 ::-webkit-scrollbar {
