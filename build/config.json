@@ -1,0 +1,16 @@
+{
+  "appId": "tymko.ares",
+  "directories": {
+    "output": "compiled"
+  },
+  "files": [
+    "app/**/*",
+    "node_modules/**/*",
+    "build/icon.*",
+    "package.json"
+  ],
+  "mac": {
+    "category": "public.app-category.games"
+  },
+  "productName": "Ares"
+}

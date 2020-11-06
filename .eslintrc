@@ -1,0 +1,8 @@
+{
+  "extends": ["eslint-config-tecca", "prettier", "prettier/react"],
+  "plugins": ["grapes"],
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "error",
+    "grapes/no-internal-import": "error"
+  }
+}
