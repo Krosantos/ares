@@ -17,6 +17,7 @@
       "@constants": ["./constants"],
       "@contexts/*": ["./contexts/*"],
       "@hooks/*": ["./hooks/*"],
+      "@pages/*": ["./pages/*"],
       "@static/*": ["./static/*"],
       "@theme": ["./theme"],
       "@utils/*": ["./utils/*"]
