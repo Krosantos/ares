@@ -1,29 +1,22 @@
 import React from "react";
-import styled, { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components";
 import theme from "@theme";
 import "./index.css";
+import Router from "Router";
+import AuthProvider from "@contexts/Auth";
+import ApiProvider from "@contexts/Api";
 
 /* eslint-disable react/jsx-max-depth */
 const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
-      <Container>
-        <Title>MinervA</Title>
-      </Container>
+      <AuthProvider>
+        <ApiProvider>
+          <Router />
+        </ApiProvider>
+      </AuthProvider>
     </ThemeProvider>
   );
 };
-
-const Container = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-`;
-
-const Title = styled.h1`
-  font-family: "megrim";
-  font-size: 10rem;
-`;
 
 export default App;
