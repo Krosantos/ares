@@ -1,4 +1,5 @@
 const theme = {
+  abyss: "#191917",
   dusk: "#363630",
   error: "#ff5d43",
   gloam: "#9e9e8f",

@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
+import { AuthContext } from "@contexts/Auth";
+import { PageContext, Pages } from "Router";
 import Tabs from "./Tabs";
 
 const LoginPage: React.FC = () => {
+  const { isAuthed } = useContext(AuthContext);
+  const { setPage } = useContext(PageContext);
+
+  useEffect(() => {
+    if (isAuthed) setPage(Pages.HOME_PAGE);
+  }, [isAuthed, setPage]);
+
   return (
     <Container>
       <Title>MinervA</Title>
-      <Tabs />
+      {!isAuthed && <Tabs />}
     </Container>
   );
 };
@@ -26,7 +35,4 @@ const Title = styled.h1`
   text-shadow: 0.325rem 0.325rem ${({ theme }) => theme.gold};
 `;
 
-const LOGIN_PAGE = "LOGIN_PAGE";
-
-export { LOGIN_PAGE };
 export default LoginPage;

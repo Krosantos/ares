@@ -3,6 +3,7 @@ import "styled-components";
 
 declare module "styled-components" {
   export interface DefaultTheme {
+    abyss: string;
     dusk: string;
     error: string;
     glow: string;

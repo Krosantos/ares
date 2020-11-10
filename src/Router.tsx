@@ -1,31 +1,36 @@
-import Splash from "@pages/Splash";
 import React, { useState, createContext, useMemo } from "react";
-import LoginPage, { LOGIN_PAGE } from "@pages/Login";
+import Splash from "@pages/Splash";
+import LoginPage from "@pages/Login";
+import Header from "@components/Header";
+
+// eslint-disable-next-line no-shadow
+enum Pages {
+  DEFAULT_PAGE,
+  HOME_PAGE,
+  LOGIN_PAGE,
+}
 
 type PageContextValue = {
-  page: string;
-  setPage: (newPage: string) => void;
+  page: Pages;
+  setPage: (newPage: Pages) => void;
 };
 
-const DEFAULT_PAGE = "DEFAULT_PAGE";
-
 const DEFAULT_VALUE: PageContextValue = {
-  page: DEFAULT_PAGE,
+  page: Pages.DEFAULT_PAGE,
   setPage: () => {},
 };
 
 const PageContext = createContext<PageContextValue>(DEFAULT_VALUE);
 
 const Router: React.FC = () => {
-  const [page, setPage] = useState<string>(LOGIN_PAGE);
+  const [page, setPage] = useState<Pages>(Pages.LOGIN_PAGE);
   const value = useMemo<PageContextValue>(() => ({ page, setPage }), [page]);
   let Component = Splash;
 
   switch (page) {
-    case LOGIN_PAGE:
+    case Pages.LOGIN_PAGE:
       Component = LoginPage;
       break;
-    case DEFAULT_PAGE:
     default:
       Component = Splash;
       break;
@@ -33,10 +38,11 @@ const Router: React.FC = () => {
 
   return (
     <PageContext.Provider value={value}>
+      <Header />
       <Component />
     </PageContext.Provider>
   );
 };
 
-export { PageContext };
+export { PageContext, Pages };
 export default Router;
