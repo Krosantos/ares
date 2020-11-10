@@ -3,6 +3,7 @@
   "plugins": ["grapes"],
   "rules": {
     "@typescript-eslint/no-explicit-any": "error",
-    "grapes/no-internal-import": "error"
+    "grapes/no-internal-import": "error",
+    "no-undef": "off"
   }
 }

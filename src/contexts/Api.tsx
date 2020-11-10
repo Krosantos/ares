@@ -33,7 +33,7 @@ const ApiProvider: React.FC = ({ children }) => {
         if (error.response.status === 401) {
           logOut();
         }
-        return error;
+        throw error;
       },
     );
     return { client };

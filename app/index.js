@@ -9,7 +9,7 @@ const isWindows = process.platform !== "darwin";
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    frame: false,
+    frame: true,
     height: 900,
     minHeight: 900,
     minWidth: 1280,
