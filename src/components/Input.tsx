@@ -78,12 +78,12 @@ type EyeButtonProps = {
 const EyeButton: React.FC<EyeButtonProps> = ({ open, handleToggle }) => {
   if (open)
     return (
-      <Button onClick={handleToggle} type="button">
+      <Button onClick={handleToggle} tabIndex={-1} type="button">
         <Eye />
       </Button>
     );
   return (
-    <Button onClick={handleToggle} type="button">
+    <Button onClick={handleToggle} tabIndex={-1} type="button">
       <EyeClosed />
     </Button>
   );

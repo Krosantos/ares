@@ -1,7 +1,8 @@
-import React, { useState, createContext, useMemo } from "react";
+import React, { useState, createContext, useContext, useMemo } from "react";
 import Splash from "@pages/Splash";
 import LoginPage from "@pages/Login";
 import Header from "@components/Header";
+import { AuthContext } from "@contexts/Auth";
 
 // eslint-disable-next-line no-shadow
 enum Pages {
@@ -23,6 +24,7 @@ const DEFAULT_VALUE: PageContextValue = {
 const PageContext = createContext<PageContextValue>(DEFAULT_VALUE);
 
 const Router: React.FC = () => {
+  const { isAuthed } = useContext(AuthContext);
   const [page, setPage] = useState<Pages>(Pages.LOGIN_PAGE);
   const value = useMemo<PageContextValue>(() => ({ page, setPage }), [page]);
   let Component = Splash;
@@ -35,6 +37,7 @@ const Router: React.FC = () => {
       Component = Splash;
       break;
   }
+  if (!isAuthed) Component = LoginPage;
 
   return (
     <PageContext.Provider value={value}>

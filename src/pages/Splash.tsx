@@ -1,16 +1,11 @@
-import Modal from "@components/Modal";
 import React from "react";
 import styled from "styled-components";
 
 const Splash: React.FC = () => (
   <Container>
     <Title>MinervA</Title>
-    <Modal isOpen>
-      <div>I AM MODAL</div>
-    </Modal>
   </Container>
 );
-
 const Container = styled.div`
   display: flex;
   align-items: center;
