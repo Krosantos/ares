@@ -19,7 +19,6 @@ const Header: React.FC = () => {
     setOpen(false);
   }, [logOut]);
   const exit = useCallback(() => {
-    console.log(app);
     app.exit();
   }, []);
 
@@ -53,7 +52,7 @@ const Stack = styled.div`
 `;
 
 const Button = styled.button`
-  background-color: ${({ theme }) => theme.gold};
+  background-color: ${({ theme }) => theme.glow};
   color: ${({ theme }) => theme.dusk};
   padding: 0.5rem 0.75rem;
   border-radius: 4px;

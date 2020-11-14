@@ -6,6 +6,7 @@ const Splash: React.FC = () => (
     <Title>MinervA</Title>
   </Container>
 );
+
 const Container = styled.div`
   display: flex;
   align-items: center;
