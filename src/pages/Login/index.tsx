@@ -9,7 +9,7 @@ const LoginPage: React.FC = () => {
   const { setPage } = useContext(PageContext);
 
   useEffect(() => {
-    if (isAuthed) setPage(Pages.HOME_PAGE);
+    if (isAuthed) setPage(Pages.MAIN_PAGE);
   }, [isAuthed, setPage]);
 
   return (

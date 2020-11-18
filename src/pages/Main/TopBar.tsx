@@ -5,6 +5,8 @@ const TopBar: React.FC = () => {
   return (
     <Bar>
       <Button>Edit Army</Button>
+      <Button>Shop</Button>
+      <Button>Settings</Button>
     </Bar>
   );
 };
@@ -14,6 +16,8 @@ const Bar = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  box-sizing: border-box;
+  padding: 0.75rem;
 `;
 
 const Button = styled.button`
@@ -27,11 +31,13 @@ const Button = styled.button`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 10rem;
+  margin: 1rem;
   justify-content: center;
   box-sizing: border-box;
-  border-image: url("/diamonds.svg") 32% round;
+  border-image: url("/diamonds.svg") 34% round;
   border-image-outset: 1rem;
-  border-image-width: 25px;
+  border-image-width: 20px;
   border-width: 1px;
   border-style: solid;
   :hover {
